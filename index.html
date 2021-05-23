@@ -1,19 +1,17 @@
 <html>
   <head>
-    <title>Rabbit site</title>
-    <script src="/socket.io/socket.io.js"></script>
     <script>
-      let socket = io();
+      let HOST = location.origin.replace(/^http/, 'ws')
+      let ws = new WebSocket(HOST);
       let el;
 
-      socket.on('time', (timeString) => {
+      ws.onmessage = (event) => {
         el = document.getElementById('server-time');
-        el.innerHTML = 'Server time: ' + timeString;
-      });
+        el.innerHTML = 'Server time: ' + event.data;
+      };
     </script>
   </head>
   <body>
-    <h4>TEST SITE</h4>
     <p id="server-time"></p>
   </body>
 </html>
