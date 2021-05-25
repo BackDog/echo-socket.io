@@ -15,6 +15,7 @@ const { Server } = require('ws');
 
 const wss = new Server({ server });
 
+var connections = [];
 wss.on('connection', (ws) => {
 	console.log('Client connected');
   	ws.on('message', function(message) {
@@ -23,11 +24,11 @@ wss.on('connection', (ws) => {
 	ws.on('close', () => console.log('Client disconnected'));
 });
 
-// setInterval(() => {
-//   wss.clients.forEach((client) => {
-//     client.send(new Date().toTimeString());
-//   });
-// }, 1000);
+setInterval(() => {
+  wss.clients.forEach((client) => {
+    client.send(new Date().toTimeString());
+  });
+}, 5000);
 
 // const io = socketIO(server);
 
