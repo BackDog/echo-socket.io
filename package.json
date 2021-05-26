@@ -16,5 +16,8 @@
     "typescript": "^3.9.9",
     "express": "^4.17.1",
     "socket.io": "^2.4.1"
+  },
+    "engines": {
+    "node": "14.x"
   }
 }

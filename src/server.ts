@@ -13,7 +13,7 @@ export class Server {
 
   private activeSockets: string[] = [];
 
-  private readonly DEFAULT_PORT = 80;
+  private readonly DEFAULT_PORT = 5000;
 
   constructor() {
     this.initialize();
