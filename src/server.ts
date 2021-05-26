@@ -13,7 +13,7 @@ export class Server {
 
   private activeSockets: string[] = [];
 
-  const DEFAULT_PORT = process.env.PORT || 5000;
+  private readonly DEFAULT_PORT = 80;
 
   constructor() {
     this.initialize();
